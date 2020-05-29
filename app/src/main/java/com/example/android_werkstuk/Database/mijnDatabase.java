@@ -47,9 +47,9 @@ public abstract class mijnDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            recipeDAO.insert(new Recipe(0,"Het eerste recept","kcal","protein", "carbs", "sugar", "sodium", "instruction"));
-            recipeDAO.insert(new Recipe(0,"Het tweede recept","12","24", "56", "34", "45", "zo doe je dat!"));
-            recipeDAO.insert(new Recipe(0,"Het derde recept","67","456", "456", "34", "45", "ahhh zo doet je dat"));
+            recipeDAO.insert(new Recipe(0,"Het eerste recept","kcal","protein", "carbs", "sugar", "sodium", "instruction", "500g swag"));
+            recipeDAO.insert(new Recipe(0,"Het tweede recept","12","24", "56", "34", "45", "zo doe je dat!", "500g cool"));
+            recipeDAO.insert(new Recipe(0,"Het derde recept","67","456", "456", "34", "45", "ahhh zo doet je dat", " 520g vlees"));
 
             return null;
         }

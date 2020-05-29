@@ -8,10 +8,14 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.lifecycle.ViewModelProvider;
@@ -37,7 +41,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initializeButtons();
 
-        Button buttonAddRecipe = findViewById(R.id.btn_add_recipe);
+        //Button buttonAddRecipe = findViewById(R.id.btn_add_recipe);
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_search);
+        setTitle("Home");
+/*
         buttonAddRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Admin.class);
                 startActivityForResult(intent, ADD_NOTE_REQUEST);
             }
-        });
 
+        });
+*/
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -79,6 +88,51 @@ public class MainActivity extends AppCompatActivity {
         }).attachToRecyclerView(recyclerView);
     }
 
+    //end
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main, menu);
+
+
+
+        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                Toast.makeText(MainActivity.this, "search is expandfed", Toast.LENGTH_SHORT);
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                Toast.makeText(MainActivity.this, "search is collapse", Toast.LENGTH_SHORT);
+                return true;
+            }
+        };
+        menu.findItem(R.id.app_bar_search).setOnActionExpandListener(onActionExpandListener);
+
+        SearchView searchView =(SearchView) menu.findItem(R.id.app_bar_search).getActionView();
+        searchView.setQueryHint("Search data");
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menu) {
+        switch(menu.getItemId()) {
+            case R.id.add_recipe:
+                Intent intent = new Intent(MainActivity.this, Admin.class);
+                startActivityForResult(intent, ADD_NOTE_REQUEST);
+                return true;
+            default:
+                return super.onOptionsItemSelected(menu);
+        }
+    }
+
+
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -90,8 +144,9 @@ public class MainActivity extends AppCompatActivity {
             String sugar = data.getStringExtra(Admin.EXTRA_SUGAR);
             String sodium = data.getStringExtra(Admin.EXTRA_SODIUM);
             String instruction = data.getStringExtra(Admin.EXTRA_INSTRUCTION);
+            String ingredients  = data.getStringExtra(Admin.EXTRA_INGREDIENTS);
 
-            Recipe recipe = new Recipe(0,name,kcal,protein,carbs,sugar,sodium,instruction);
+            Recipe recipe = new Recipe(0,name,kcal,protein,carbs,sugar,sodium,instruction, ingredients);
             recipeViewModel.insert(recipe);
             Toast.makeText(this,"Recipe saved",Toast.LENGTH_SHORT).show();
         } else {
@@ -102,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
     private void initializeButtons() {
         Button button1 = findViewById(R.id.btn_recipes);
         Button button2 = findViewById(R.id.btn_saved);
+        Button button3 = findViewById(R.id.btn_about);
 
         View.OnClickListener buttonListener = new View.OnClickListener() {
             @Override
@@ -112,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
 
         button1.setOnClickListener(buttonListener);
         button2.setOnClickListener(buttonListener);
+        button3.setOnClickListener(buttonListener);
 
     }
 
@@ -126,7 +183,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_saved:
                 intent = new Intent(this, test.class);
                 break;
-
+            case R.id.btn_about:
+                intent = new Intent(this, About.class);
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + button.getId());
         }

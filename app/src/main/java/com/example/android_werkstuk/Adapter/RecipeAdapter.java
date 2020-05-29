@@ -45,6 +45,13 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeHold
 
             Intent intent = new Intent(view.getContext(), recipeDetail.class);
             intent.putExtra("Name", currentRecipe.getName());
+            intent.putExtra("Kcal", currentRecipe.getKcal());
+            intent.putExtra("Protein", currentRecipe.getProtein());
+            intent.putExtra("Carbs", currentRecipe.getCarbs());
+            intent.putExtra("Sugar", currentRecipe.getSugar());
+            intent.putExtra("Sodium", currentRecipe.getSodium());
+            intent.putExtra("Ingredients", currentRecipe.getIngredients());
+            intent.putExtra("Instruction", currentRecipe.getInstruction());
             view.getContext().startActivity(intent);
         });
 

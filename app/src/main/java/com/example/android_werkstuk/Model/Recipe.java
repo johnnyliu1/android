@@ -16,6 +16,7 @@ public class Recipe {
     private String sugar;
     private String sodium;
     private String instruction;
+    private String ingredients;
 
 
 
@@ -48,6 +49,14 @@ public class Recipe {
 
     public String getSodium() {
         return sodium;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     public void setId(int id) {
@@ -83,7 +92,7 @@ public class Recipe {
     }
 
 
-    public Recipe(int id, String name, String kcal, String protein, String carbs, String sugar, String sodium, String instruction) {
+    public Recipe(int id, String name, String kcal, String protein, String carbs, String sugar, String sodium, String instruction, String ingredients) {
         this.id = id;
         this.name = name;
         this.kcal = kcal;
@@ -92,5 +101,6 @@ public class Recipe {
         this.sugar = sugar;
         this.sodium = sodium;
         this.instruction = instruction;
+        this.ingredients = ingredients;
     }
 }

@@ -36,6 +36,11 @@ public class Admin extends AppCompatActivity {
 
     public static final String EXTRA_INSTRUCTION =
             "com.example.android_werkstuk.EXTRA_INSTRUCTION";
+
+    public static final String EXTRA_INGREDIENTS =
+            "com.example.android_werkstuk.EXTRA_INGREDIENTS";
+
+
     private EditText txtName;
     private EditText txtKcal;
     private EditText txtProtein;
@@ -43,7 +48,7 @@ public class Admin extends AppCompatActivity {
     private EditText txtSugar;
     private EditText txtSodium;
     private EditText txtInstruction;
-    private Button btn_insert;
+    private EditText txtIngredients;
 
 
     @Override
@@ -58,6 +63,7 @@ public class Admin extends AppCompatActivity {
         txtSugar = (EditText) findViewById(R.id.txtSugar);
         txtSodium = (EditText) findViewById(R.id.txtSodium);
         txtInstruction = (EditText) findViewById(R.id.txtInstruction);
+        txtIngredients = (EditText) findViewById(R.id.txtIngredients);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("Add recipe");
@@ -90,6 +96,7 @@ public class Admin extends AppCompatActivity {
         String Sugar = txtSugar.getText().toString();
         String Sodium = txtSodium.getText().toString();
         String Instruction = txtInstruction.getText().toString();
+        String Ingredients = txtIngredients.getText().toString();
 
         if (Name.trim().isEmpty()) {
             Toast.makeText(this,"please fill in all fields", Toast.LENGTH_SHORT).show();
@@ -104,6 +111,7 @@ public class Admin extends AppCompatActivity {
         data.putExtra(EXTRA_SUGAR, Sugar);
         data.putExtra(EXTRA_SODIUM, Sodium);
         data.putExtra(EXTRA_INSTRUCTION, Instruction);
+        data.putExtra(EXTRA_INGREDIENTS, Ingredients);
 
         setResult(RESULT_OK, data);
         finish();

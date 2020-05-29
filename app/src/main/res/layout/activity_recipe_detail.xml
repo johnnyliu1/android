@@ -1,58 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recipeDetail">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        >
 
-    <TextView
-        android:id="@+id/txtKcal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="196dp" />
+        <!-- things to scroll -->
 
-    <TextView
-        android:id="@+id/txtCarbs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="270dp" />
 
-    <TextView
-        android:id="@+id/txtSodium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="361dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:paddingBottom="50dp">
 
-    <TextView
-        android:id="@+id/txtSugar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="194dp" />
+            <ImageView
+                android:id="@+id/foodIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingTop="35dp"
+                app:srcCompat="@drawable/ic_fastfood_48px" />
 
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="12"
+                android:paddingTop="45dp"
+                android:text="TextView"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtNutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="Nutrition value per 100g"
+            android:textColor="@android:color/black"
+            android:textSize="28sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:background="#FFFFFF">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtKcal"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="TextView"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="97dp"
+                    tools:layout_editor_absoluteY="196dp" />
+
+                <TextView
+                    android:id="@+id/lblKcal"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Kcal" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtProtein"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="247dp"
+                    tools:layout_editor_absoluteY="308dp" />
+
+                <TextView
+                    android:id="@+id/lblProtein"
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="4"
+
+                    android:layout_height="wrap_content"
+                    android:text="Protein" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtCarbs"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="103dp"
+                    tools:layout_editor_absoluteY="270dp" />
+
+                <TextView
+                    android:id="@+id/lblCarbs"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Carbs" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtSodium"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="110dp"
+                    tools:layout_editor_absoluteY="361dp" />
+
+                <TextView
+                    android:id="@+id/lblSodium"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Sodium" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtSugar"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:layout_weight="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="280dp"
+                    tools:layout_editor_absoluteY="194dp" />
+
+                <TextView
+                    android:id="@+id/lblSugar"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sugar" />
+            </TableRow>
+        </TableLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
     <TextView
-        android:id="@+id/txtProtein"
-        android:layout_width="wrap_content"
+        android:id="@+id/lblIngredients"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:padding="12dp"
+        android:textSize="28dp"
+        android:text="Ingredients"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteX="247dp"
         tools:layout_editor_absoluteY="308dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txtIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="20dp"
+            android:text="TextView"
+            android:textColor="@android:color/white"
+            tools:layout_editor_absoluteX="247dp"
+            tools:layout_editor_absoluteY="308dp" />
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/lblInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:textSize="28dp"
+                android:text="Instructions"
+                android:textColor="@android:color/white"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="308dp" />
+
+            <TextView
+                android:id="@+id/txtInstruction"
+                android:textSize="20dp"
+                android:padding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="308dp" />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</ScrollView>
