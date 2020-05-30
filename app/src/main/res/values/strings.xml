@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Android Cooking app</string>
+    <string name="btnRecipes">Recipes</string>
+    <string name="btnSaved">Saved</string>
+    <string name="btnAbout">About</string>
+    <string name="addRecipe">Add recipe ( per 100g )</string>
+    <string name="hintName">Recipe name</string>
+    <string name="hintCal">Calories</string>
+    <string name="hintPro">Protein</string>
+    <string name="hintSodium">Sodium</string>
+    <string name="hintCarbs">Carbs</string>
+    <string name="hintSugar">Sugar</string>
+    <string name="hintInstruction">Instructions</string>
+    <string name="hintIngredients">Ingredients</string>
+    <string name="titleNut">Nutrition value per 100g</string>
+
+
 </resources>

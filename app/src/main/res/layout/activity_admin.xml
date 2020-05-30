@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Add a recipe"
+                android:text="@string/addRecipe"
                 android:textSize="24dp" />
         </TableRow>
 
@@ -43,7 +43,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
-                android:hint="Recipe name"
+                android:hint="@string/hintName"
                 android:inputType="textPersonName" />
 
         </TableRow>
@@ -61,7 +61,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Calories"
+                android:hint="@string/hintCal"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Protein"
+                android:hint="@string/hintPro"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Carbs"
+                android:hint="@string/hintCarbs"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Sugar"
+                android:hint="@string/hintSugar"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -99,7 +99,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Sodium"
+                android:hint="@string/hintSodium"
                 android:inputType="textPersonName" />
         </TableRow>
 
@@ -119,7 +119,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="Instruction"
+                android:hint="@string/hintInstruction"
                 android:inputType="textMultiLine" />
         </TableRow>
 
@@ -132,13 +132,13 @@
                 android:id="@+id/txtIngredients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Ingredients"
-                android:layout_weight="1"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/hintIngredients"
                 android:inputType="textPersonName" />
         </TableRow>
     </TableLayout>

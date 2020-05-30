@@ -43,32 +43,63 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtNutrition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:text="@string/titleNut"
-            android:textColor="@android:color/black"
-            android:textSize="28sp" />
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtNutrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="@string/titleNut"
+                android:textColor="@android:color/black"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/lblIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:paddingLeft="24dp"
+                android:text="@string/hintIngredients"
+                android:textColor="@android:color/black"
+                android:textSize="28dp"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="308dp" />
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="650dp"
+            android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:background="#FFFFFF">
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/lblIngredients"
+            tools:layout_editor_absoluteX="12dp">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
                 <TextView
                     android:id="@+id/txtKcal"
-                    android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
                     android:text="TextView"
+                    android:layout_weight="2"
+                    android:textColor="@android:color/black"
                     android:textSize="20sp"
                     tools:layout_editor_absoluteX="97dp"
                     tools:layout_editor_absoluteY="196dp" />
@@ -88,13 +119,13 @@
 
                 <TextView
                     android:id="@+id/txtProtein"
-                    android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
-
+                    android:layout_weight="2"
                     android:text="TextView"
+                    android:textColor="@android:color/black"
+
+                    android:textSize="20sp"
                     tools:layout_editor_absoluteX="247dp"
                     tools:layout_editor_absoluteY="308dp" />
 
@@ -114,12 +145,12 @@
 
                 <TextView
                     android:id="@+id/txtCarbs"
-                    android:textColor="@android:color/black"
-                    android:layout_weight="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:layout_weight="2"
                     android:text="TextView"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
                     tools:layout_editor_absoluteX="103dp"
                     tools:layout_editor_absoluteY="270dp" />
 
@@ -138,12 +169,12 @@
 
                 <TextView
                     android:id="@+id/txtSodium"
-                    android:textColor="@android:color/black"
-                    android:layout_weight="2"
-                    android:textSize="20sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:text="TextView"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
                     tools:layout_editor_absoluteX="110dp"
                     tools:layout_editor_absoluteY="361dp" />
 
@@ -162,12 +193,12 @@
 
                 <TextView
                     android:id="@+id/txtSugar"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:layout_weight="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:text="TextView"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
                     tools:layout_editor_absoluteX="280dp"
                     tools:layout_editor_absoluteY="194dp" />
 
@@ -180,38 +211,25 @@
                     android:textColor="@android:color/black" />
             </TableRow>
         </TableLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/lblIngredients"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:text="@string/hintIngredients"
-        android:textColor="@android:color/white"
-        android:textSize="28dp"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="308dp" />
         <TextView
             android:id="@+id/txtIngredients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:padding="12dp"
-            android:textSize="20dp"
             android:text="TextView"
             android:textColor="@android:color/white"
+            android:textSize="20dp"
             tools:layout_editor_absoluteX="247dp"
             tools:layout_editor_absoluteY="308dp" />
-</LinearLayout>
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="100dp"
             android:background="@color/colorPrimary"
             android:orientation="vertical">
 
