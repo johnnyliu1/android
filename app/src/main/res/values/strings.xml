@@ -13,6 +13,9 @@
     <string name="hintInstruction">Instructions</string>
     <string name="hintIngredients">Ingredients</string>
     <string name="titleNut">Nutrition value per 100g</string>
+    <string name="subscribe">Subscribe to our newsletter</string>
+    <string name="description">This is an cooking app with recipes</string>
+    <string name="goBack">Go back </string>
 
 
 </resources>

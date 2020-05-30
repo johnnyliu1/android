@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeButtons() {
         Button button1 = findViewById(R.id.btn_recipes);
-        Button button2 = findViewById(R.id.btn_saved);
+        //Button button2 = findViewById(R.id.btn_saved);
         Button button3 = findViewById(R.id.btn_about);
 
         View.OnClickListener buttonListener = new View.OnClickListener() {
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         button1.setOnClickListener(buttonListener);
-        button2.setOnClickListener(buttonListener);
+       // button2.setOnClickListener(buttonListener);
         button3.setOnClickListener(buttonListener);
 
     }
@@ -180,9 +180,11 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, MainActivity.class);
                 break;
 
-            case R.id.btn_saved:
+            /*case R.id.btn_saved:
                 intent = new Intent(this, test.class);
                 break;
+
+             */
             case R.id.btn_about:
                 intent = new Intent(this, About.class);
                 break;
@@ -193,10 +195,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void goList(View view) {
-        Intent intent = new Intent(this, test.class);
-        startActivity(intent);
-    }
 
 
 }
