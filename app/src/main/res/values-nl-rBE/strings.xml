@@ -14,4 +14,7 @@
     <string name="hintInstruction">Instructies</string>
     <string name="hintIngredients">Ingredienten</string>
     <string name="titleNut">Voedingswaaren per 100g</string>
+    <string name="subscribe">Abonneer aan nieuwsbrief</string>
+    <string name="description">Dit is een app over kookrecepten</string>
+    <string name="goBack">Ga terug</string>
 </resources>
