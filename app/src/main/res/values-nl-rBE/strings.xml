@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Cooking app</string>
+    <string name="btnRecipes">Recepten</string>
+    <string name="btnSaved">Opgeslagen</string>
+    <string name="btnAbout">Over</string>
+    <string name="addRecipe">Voeg recept toe ( per 100g)</string>
+    <string name="hintName">Recept naam</string>
+    <string name="hintCal">Calorieën</string>
+    <string name="hintPro">Proteïne</string>
+    <string name="hintSodium">Sodium</string>
+    <string name="hintCarbs">Koolhydraten</string>
+    <string name="hintSugar">Suikers</string>
+    <string name="hintInstruction">Instructies</string>
+    <string name="hintIngredients">Ingredienten</string>
+    <string name="titleNut">Voedingswaaren per 100g</string>
+</resources>
